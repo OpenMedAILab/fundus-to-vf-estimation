@@ -1,7 +1,7 @@
 """Wave2: 分类逐步消融 + 回归收敛配置, 跨GPU并行"""
 import subprocess, time, os
-from config import ROOT
-GPUS=[1,2,3,5,7]; os.makedirs(f"{ROOT}/logs",exist_ok=True)
+from config import SRC, LOGS
+GPUS=[1,2,3,5,7]; os.makedirs(LOGS,exist_ok=True)
 C=[]
 # 分类逐步消融: 纯CE无采样 -> CE+采样 -> Focal+采样
 for arch in ["resnet","full_hybrid"]:
@@ -15,9 +15,9 @@ for arch in ["hybrid","full_hybrid"]:
 print("配置数:",len(C))
 def launch(c,g):
     tag=f"{c['task']}_{c['arch']}_{c['input']}_{c['variant']}_s{c['seed']}"
-    cmd=["python",f"{ROOT}/repro.py","--task",c["task"],"--arch",c["arch"],"--input",c["input"],
+    cmd=["python",f"{SRC}/repro.py","--task",c["task"],"--arch",c["arch"],"--input",c["input"],
          "--seed",str(c["seed"]),"--variant",c["variant"],"--epochs","80"]+c["extra"]
-    log=open(f"{ROOT}/logs/{tag}.log","w")
+    log=open(f"{LOGS}/{tag}.log","w")
     return subprocess.Popen(cmd,env=dict(os.environ,CUDA_VISIBLE_DEVICES=str(g)),stdout=log,stderr=subprocess.STDOUT,cwd=ROOT)
 q=list(C);run={};free=list(GPUS);done=0;t0=time.time()
 while q or run:

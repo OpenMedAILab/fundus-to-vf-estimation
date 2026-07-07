@@ -4,11 +4,11 @@ from datetime import datetime
 from scipy.interpolate import griddata
 from PIL import Image
 from torchvision import transforms
-from config import ROOT, EXTERNAL_ROOT as EXT
-sys.path.insert(0, ROOT)
+from config import SRC, CKPT, RESULTS, VF_LAYOUT, EXTERNAL_ROOT as EXT
+sys.path.insert(0, SRC)
 from repro import Hybrid, N_VF
 dev="cuda" if torch.cuda.is_available() else "cpu"
-lay=np.load(ROOT+"/vf_layout.npy"); order=np.lexsort((lay[:,0],-lay[:,1])); LP=lay[order]
+lay=np.load(VF_LAYOUT); order=np.lexsort((lay[:,0],-lay[:,1])); LP=lay[order]
 gx,gy=np.mgrid[-1:1:200j,-1:1:200j]; disc=(gx**2+gy**2)<=1.0
 def render(v):
     z=griddata(LP,v,(gx,gy),method="cubic"); zn=griddata(LP,v,(gx,gy),method="nearest"); z[np.isnan(z)]=zn[np.isnan(z)]; return z
@@ -51,7 +51,7 @@ for n,d,vp in vfs:
         if g<=90: pairs.append((cp,vp))
 print("配对眼数:",len(pairs))
 # 模型预测 -> 渲染图; 真实图 -> 曲面
-m=Hybrid(N_VF).to(dev); m.load_state_dict(torch.load(ROOT+"/ckpt/reg_hybrid_cfp_s0/best.pth",map_location=dev)); m.eval()
+m=Hybrid(N_VF).to(dev); m.load_state_dict(torch.load(f"{CKPT}/reg_hybrid_cfp_s0/best.pth",map_location=dev)); m.eval()
 tf=transforms.Compose([transforms.Resize((224,224)),transforms.ToTensor(),transforms.Normalize([0.485,0.456,0.406],[0.229,0.224,0.225])])
 keep=[i for i in range(61) if i not in(21,32)]
 pmaps=[]; rmaps=[]
@@ -73,5 +73,5 @@ from scipy.stats import mannwhitneyu
 u,pu=mannwhitneyu(matched,mis,alternative="greater")
 res={"n_pairs":n,"matched_SSIM_mean":float(matched.mean()),"matched_SSIM_std":float(matched.std()),
      "mismatched_SSIM_mean":float(mis.mean()),"mannwhitney_p_matched>mismatched":float(pu)}
-json.dump(res,open(ROOT+"/external_ssim.json","w"),indent=2)
+json.dump(res,open(f"{RESULTS}/external_ssim.json","w"),indent=2)
 print(json.dumps(res,indent=1))

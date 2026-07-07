@@ -1,10 +1,10 @@
 """R3-3扩展: 预测VF vs 真实VF 严重度分级一致性(κ/混淆矩阵/敏感度特异度) + 决策曲线(DCA)"""
 import json, glob, numpy as np
 from sklearn.metrics import cohen_kappa_score, confusion_matrix
-from config import ROOT
-agg=json.load(open(ROOT+"/aggregate_summary.json"))
+from config import CKPT, RESULTS
+agg=json.load(open(f"{RESULTS}/aggregate_summary.json"))
 best=min(agg["reg"].items(), key=lambda kv: kv[1]["point_mae_mean"])[0]
-rs=[json.load(open(f)) for f in glob.glob(f"{ROOT}/ckpt/reg_{best}_s*/result.json")]
+rs=[json.load(open(f)) for f in glob.glob(f"{CKPT}/reg_{best}_s*/result.json")]
 P=np.mean([np.array(r["test_pred"]["P"]) for r in rs],0); T=np.array(rs[0]["test_pred"]["T"])
 def ms(v): m=v!=-1; return v[m].mean()
 ms_t=np.array([ms(T[i]) for i in range(len(T))]); ms_p=np.array([ms(P[i]) for i in range(len(P))])
@@ -34,7 +34,7 @@ out={"best_config":best,"grading_cutoffs_MS":{"mild":">=26","moderate":"22-26","
      "cohen_kappa":kappa,"weighted_kappa_linear":kappa_w,
      "severe_vs_rest":{"sens":float(sens),"spec":float(spec),"cm_tn_fp_fn_tp":[int(tn),int(fp),int(fn),int(tp)]},
      "decision_curve":dca}
-json.dump(out,open(ROOT+"/grading_dca.json","w"),indent=2,ensure_ascii=False)
+json.dump(out,open(f"{RESULTS}/grading_dca.json","w"),indent=2,ensure_ascii=False)
 print("κ=%.3f  weighted-κ=%.3f  severe sens=%.2f spec=%.2f"%(kappa,kappa_w,sens,spec))
 print("混淆矩阵(mild/mod/severe):",cm)
 print("DCA(部分):",[(d["pt"],round(d["net_benefit_model"],3)) for d in dca[:5]])

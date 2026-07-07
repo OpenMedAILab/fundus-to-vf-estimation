@@ -10,8 +10,8 @@ ap.add_argument("--archs", default="resnet,transformer,hybrid,full_hybrid")
 ap.add_argument("--inputs", default="cfp,roi,annotated")
 ap.add_argument("--epochs", type=int, default=80)
 a = ap.parse_args()
-from config import ROOT
-os.makedirs(f"{ROOT}/logs", exist_ok=True)
+from config import SRC, LOGS
+os.makedirs(LOGS, exist_ok=True)
 GPUS = [int(g) for g in a.gpus.split(",")]
 seeds = [int(s) for s in a.seeds.split(",")]
 tasks = ["reg", "cls"] if a.which == "all" else [a.which]
@@ -21,11 +21,11 @@ print(f"配置总数: {len(CONFIGS)} | GPU: {GPUS} | aug={a.aug}")
 
 def launch(cfg, gpu):
     tag = f"{cfg['task']}_{cfg['arch']}_{cfg['input']}{'_aug' if a.aug else ''}_s{cfg['seed']}"
-    cmd = ["python", f"{ROOT}/repro.py", "--task", cfg["task"], "--arch", cfg["arch"],
+    cmd = ["python", f"{SRC}/repro.py", "--task", cfg["task"], "--arch", cfg["arch"],
            "--input", cfg["input"], "--seed", str(cfg["seed"]), "--epochs", str(a.epochs)]
     if a.aug: cmd.append("--aug")
     env = dict(os.environ, CUDA_VISIBLE_DEVICES=str(gpu))
-    log = open(f"{ROOT}/logs/{tag}.log", "w")
+    log = open(f"{LOGS}/{tag}.log", "w")
     return subprocess.Popen(cmd, env=env, stdout=log, stderr=subprocess.STDOUT, cwd=ROOT)
 
 queue = list(CONFIGS); running = {}; free = list(GPUS); done = 0; t0 = time.time()

@@ -1,6 +1,6 @@
 """R4-2: 纵向记录定义 — 随访次数/时间间隔分布/年度结构 (基于 GRAPE Follow-up)"""
 import os, pandas as pd, numpy as np, json, collections
-from config import ROOT, GRAPE_XLSX as XLS
+from config import RESULTS, GRAPE_XLSX as XLS
 fu=pd.read_excel(XLS, sheet_name="Follow-up", header=[0,1]); fu.columns=["|".join([str(a),str(b)]) for a,b in fu.columns]
 c=list(fu.columns); subj,lat,vis,interval,cfp=c[0],c[1],c[2],c[3],[x for x in c if "Corresponding" in x][0]
 fu=fu[fu[subj].notna()].copy()
@@ -24,5 +24,5 @@ out={
 span=img.groupby("eye").apply(lambda g: pd.to_numeric(g[interval],errors="coerce").max())
 out["followup_span_years_per_eye"]={"mean":float(span.mean()),"max":float(span.max()),
     "eyes_ge1yr":int((span>=1).sum()),"eyes_ge2yr":int((span>=2).sum())}
-json.dump(out, open(os.path.join(ROOT,"longitudinal_stats.json"),"w"),indent=2,ensure_ascii=False)
+json.dump(out, open(f"{RESULTS}/longitudinal_stats.json","w"),indent=2,ensure_ascii=False)
 print(json.dumps(out,ensure_ascii=False,indent=2))

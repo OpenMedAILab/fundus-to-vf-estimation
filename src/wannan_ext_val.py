@@ -23,9 +23,9 @@ from skimage.metrics import structural_similarity as ssim
 from torchvision import transforms
 import matplotlib; matplotlib.use("Agg"); import matplotlib.pyplot as plt
 
-from config import ROOT, EXTERNAL_ROOT as EXT
-OUT  = ROOT + "/wannan_extval"; os.makedirs(OUT, exist_ok=True)
-sys.path.insert(0, ROOT)
+from config import SRC, CKPT, WANNAN_OUT, VF_LAYOUT, EXTERNAL_ROOT as EXT
+OUT  = WANNAN_OUT; os.makedirs(OUT, exist_ok=True)
+sys.path.insert(0, SRC)
 from repro import Hybrid, N_VF
 dev = "cuda" if torch.cuda.is_available() else "cpu"
 
@@ -44,7 +44,7 @@ CEN = RR <= 0.30**2              # 中央(辨别 30°/50° 页)
 SUP = DISC & (GY > 0.10); INF = DISC & (GY < -0.10)
 
 # ---------- VF 点布局 (59点, 单位≈27°) ----------
-LAY = np.load(ROOT + "/vf_layout.npy")            # (59,2)
+LAY = np.load(VF_LAYOUT)            # (59,2)
 KEEP = [i for i in range(61) if i not in (21, 32)]
 # 59点在正准网格中的(row,col)
 LcolF = (LAY[:, 0] + 1) / 2 * (N - 1)
@@ -100,7 +100,7 @@ def parse(s):
 
 # ---------- 模型 ----------
 m = Hybrid(N_VF).to(dev)
-m.load_state_dict(torch.load(ROOT + "/ckpt/reg_hybrid_cfp_s0/best.pth", map_location=dev)); m.eval()
+m.load_state_dict(torch.load(f"{CKPT}/reg_hybrid_cfp_s0/best.pth", map_location=dev)); m.eval()
 tf = transforms.Compose([transforms.Resize((224, 224)), transforms.ToTensor(),
                          transforms.Normalize([0.485, 0.456, 0.406], [0.229, 0.224, 0.225])])
 

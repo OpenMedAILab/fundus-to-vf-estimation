@@ -4,7 +4,7 @@ from PIL import Image
 from torchvision import transforms
 from torchmetrics.image.fid import FrechetInceptionDistance
 from torchmetrics.image.kid import KernelInceptionDistance
-from config import ROOT, GRAPE_CFP as GRAPE, EXT_CFP_IMGS as EXT
+from config import RESULTS, GRAPE_CFP as GRAPE, EXT_CFP_IMGS as EXT
 dev="cuda" if torch.cuda.is_available() else "cpu"
 tf=transforms.Compose([transforms.Resize((256,256)),transforms.PILToTensor()])
 def load(paths):
@@ -24,5 +24,5 @@ for m in (fid,kid):
 res={"FID_external_vs_GRAPE":float(fid.compute()),
      "KID_external_vs_GRAPE_mean":float(kid.compute()[0]),"KID_std":float(kid.compute()[1]),
      "n_GRAPE":len(g),"n_external":len(e)}
-json.dump(res,open(os.path.join(ROOT,"ext_domain_shift.json"),"w"),indent=2)
+json.dump(res,open(f"{RESULTS}/ext_domain_shift.json","w"),indent=2)
 print(json.dumps(res),flush=True)

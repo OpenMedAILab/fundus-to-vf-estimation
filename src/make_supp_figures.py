@@ -12,13 +12,13 @@ from sklearn.metrics import mean_absolute_error
 import matplotlib; matplotlib.use("Agg"); import matplotlib.pyplot as plt
 from matplotlib.patches import FancyBboxPatch, FancyArrowPatch
 
-from config import ROOT
-import os; OUT = ROOT + "/supp_fig"; os.makedirs(OUT, exist_ok=True)
+from config import CKPT, RESULTS, SUPP_FIG, VF_LAYOUT
+import os; OUT = SUPP_FIG; os.makedirs(OUT, exist_ok=True)
 
 # ---------- 载入最优回归配置的 test 预测(跨seed集成) ----------
-agg = json.load(open(ROOT + "/aggregate_summary.json"))
+agg = json.load(open(f"{RESULTS}/aggregate_summary.json"))
 best = min(agg["reg"].items(), key=lambda kv: kv[1]["point_mae_mean"]); cfg = best[0]
-rs = [json.load(open(f)) for f in glob.glob(f"{ROOT}/ckpt/reg_{cfg}_s*/result.json")]
+rs = [json.load(open(f)) for f in glob.glob(f"{CKPT}/reg_{cfg}_s*/result.json")]
 P = np.mean([np.array(r["test_pred"]["P"]) for r in rs], 0); T = np.array(rs[0]["test_pred"]["T"])
 print(f"best={cfg}  seeds={len(rs)}  test={len(T)}")
 
@@ -55,7 +55,7 @@ fig.suptitle(f"Internal clinical error analysis (R3-3) — best config: {cfg}", 
 plt.savefig(OUT + "/fig_clinical_error.png", dpi=120, bbox_inches="tight"); plt.close()
 
 # ============ Figure 2: 失败案例(最差MAE眼) ============
-LAY = np.load(ROOT + "/vf_layout.npy"); KEEP = [i for i in range(61) if i not in (21, 32)]
+LAY = np.load(VF_LAYOUT); KEEP = [i for i in range(61) if i not in (21, 32)]
 Ng = 160; xs = np.linspace(-1, 1, Ng); ys = np.linspace(1, -1, Ng); GX, GY = np.meshgrid(xs, ys); DISC = GX**2 + GY**2 <= 1
 def surf(v59):
     ok = v59 != -1

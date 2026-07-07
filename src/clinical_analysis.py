@@ -2,11 +2,11 @@
 基于最优回归配置(按点位MAE)的跨seed集成 test 预测。"""
 import json, glob, numpy as np
 from sklearn.metrics import mean_absolute_error
-from config import ROOT
-CK=ROOT+"/ckpt"
+from config import CKPT, RESULTS
+CK=CKPT
 
 # 选最优回归配置
-agg=json.load(open(ROOT+"/aggregate_summary.json"))
+agg=json.load(open(f"{RESULTS}/aggregate_summary.json"))
 best=min(agg["reg"].items(), key=lambda kv: kv[1]["point_mae_mean"])
 cfg=best[0]; print("最优回归配置:",cfg, "point_mae=%.3f"%best[1]["point_mae_mean"])
 arch,inp = cfg.rsplit("_",1) if cfg.count("_")==1 else ("_".join(cfg.split("_")[:-1]), cfg.split("_")[-1])
@@ -44,6 +44,6 @@ out={"best_config":cfg,"n_seeds":len(rs),"n_test":int(len(T)),
      "bland_altman":{"bias":float(bias),"sd":float(sd),"loa_lower":float(loa[0]),"loa_upper":float(loa[1]),"icc":ICC},
      "severity_stratified":sev,"worst_cases":worst,
      "overall":{"point_mae":float(emae.mean()),"ms_mae":float(np.abs(diff).mean())}}
-json.dump(out, open(ROOT+"/clinical_analysis.json","w"), indent=2)
+json.dump(out, open(f"{RESULTS}/clinical_analysis.json","w"), indent=2)
 print(json.dumps(out["bland_altman"],indent=1)); print("严重度:",json.dumps(sev,ensure_ascii=False))
 print("saved clinical_analysis.json")

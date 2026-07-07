@@ -2,7 +2,7 @@
 import os, glob, re, json, numpy as np
 from PIL import Image
 from scipy.stats import spearmanr, pearsonr
-from config import ROOT, EXT_VF as VF
+from config import RESULTS, EXT_VF as VF
 
 def key_of(name):  # 患者名+日期 (去掉尾部 -编号 和扩展名)
     b=re.sub(r'\.(jpg|jpeg|png)$','',name,flags=re.I)
@@ -31,7 +31,7 @@ for r in img: ikey.setdefault(r["key"],[]).append(r["img_MS"])
 ikey={k:np.mean(v) for k,v in ikey.items()}
 
 # 读预测MS, 患者级聚合
-pred=json.load(open(f"{ROOT}/external_pred_ms.json"))
+pred=json.load(open(f"{RESULTS}/external_pred_ms.json"))
 pkey={}
 for r in pred:
     if "pred_MS" in r: pkey.setdefault(key_of(r["case"]),[]).append(r["pred_MS"])
@@ -48,5 +48,5 @@ if len(common)>=5:
     # 线性拟合后 MAE
     a,b=np.polyfit(I,P,1); pred_from_img=a*I+b
     print(f"  线性校准后 预测MS vs (校准)图MS  MAE={np.abs(P-pred_from_img).mean():.2f} dB")
-json.dump({"common":common,"pred_MS":P.tolist(),"img_MS":I.tolist()},open(f"{ROOT}/external_ms_pairing.json","w"),ensure_ascii=False,indent=1)
+json.dump({"common":common,"pred_MS":P.tolist(),"img_MS":I.tolist()},open(f"{RESULTS}/external_ms_pairing.json","w"),ensure_ascii=False,indent=1)
 print("saved external_ms_pairing.json")

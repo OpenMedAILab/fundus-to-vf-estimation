@@ -3,8 +3,8 @@ import json, glob, os, sys
 import numpy as np
 from sklearn.metrics import roc_auc_score, average_precision_score, mean_absolute_error, r2_score
 
-from config import ROOT
-CK = ROOT + "/ckpt"
+from config import CKPT, RESULTS
+CK = CKPT
 ARCH_ORDER = ["resnet", "transformer", "hybrid", "full_hybrid"]
 
 def boot(fn, *arr, n=2000, seed=0):
@@ -83,5 +83,5 @@ for r in cls_table(False):
     print(f"{arch:13s}{inp:11s}{ms:>18s}{es:>20s}{(pr if pr else 0):8.3f}")
     out["cls"][f"{arch}_{inp}"] = {"roc_mean": m, "roc_std": s, "ens_roc": em, "ci95": ci, "pr_mean": pr, "n_seeds": n}
 
-json.dump(out, open(ROOT + "/aggregate_summary.json", "w"), indent=2)
-print("\nsaved:", ROOT + "/aggregate_summary.json")
+json.dump(out, open(f"{RESULTS}/aggregate_summary.json", "w"), indent=2)
+print("\nsaved:", f"{RESULTS}/aggregate_summary.json")

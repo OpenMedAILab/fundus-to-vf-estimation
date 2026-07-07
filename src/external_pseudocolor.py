@@ -23,13 +23,13 @@ from PIL import Image
 from torchvision import transforms
 import matplotlib; matplotlib.use("Agg"); import matplotlib.pyplot as plt
 
-from config import ROOT, EXTERNAL_ROOT as EXT
-sys.path.insert(0, ROOT)
+from config import SRC, CKPT, RESULTS, FIGURES, VF_LAYOUT, EXTERNAL_ROOT as EXT
+sys.path.insert(0, SRC)
 from repro import Hybrid, N_VF
 dev="cuda" if torch.cuda.is_available() else "cpu"
 
 # ---------- 视野点布局 (单位圆盘, +y=上方=上半野) ----------
-lay=np.load(ROOT+"/vf_layout.npy")            # (59,2) 已归一到单位圆
+lay=np.load(VF_LAYOUT)            # (59,2) 已归一到单位圆
 order=np.lexsort((lay[:,0],-lay[:,1])); LP=lay[order]
 KEEP=[i for i in range(61) if i not in (21,32)]   # 模型61维 -> 去2盲点 -> 59, 对齐 LP
 
@@ -98,7 +98,7 @@ def parse(s):
 
 # ---------- 模型 ----------
 m=Hybrid(N_VF).to(dev)
-m.load_state_dict(torch.load(ROOT+"/ckpt/reg_hybrid_cfp_s0/best.pth",map_location=dev)); m.eval()
+m.load_state_dict(torch.load(f"{CKPT}/reg_hybrid_cfp_s0/best.pth",map_location=dev)); m.eval()
 tf=transforms.Compose([transforms.Resize((224,224)),transforms.ToTensor(),
                        transforms.Normalize([0.485,0.456,0.406],[0.229,0.224,0.225])])
 
@@ -185,7 +185,7 @@ res={"n_struct_pairs":int(n),
      "hemifield_asym_spearman_r":float(sr_a),"hemifield_asym_spearman_p":float(sp_a),
      "spatialMS_spearman_r":float(sr_m),"spatialMS_spearman_p":float(sp_m),
      "note":"30°中央页筛选; OD/OS取镜像较优; 局部窗口SSIM(skimage,圆盘内); VF访次级去重; inference-only"}
-json.dump(res,open(ROOT+"/external_pseudocolor.json","w"),indent=2,ensure_ascii=False)
+json.dump(res,open(f"{RESULTS}/external_pseudocolor.json","w"),indent=2,ensure_ascii=False)
 print(json.dumps(res,ensure_ascii=False,indent=1))
 
 # ============ 图1: 伪彩预测 + 真实对比 (代表性配对) ============
@@ -225,7 +225,7 @@ for r,i in enumerate(pick):
     im=draw_real_db(axes[r,3],Rsurf[i],f"Real VF -> dB surface\nSSIM={matched[i]:.2f}")
 fig.colorbar(im,ax=axes.ravel().tolist(),fraction=0.012,pad=0.01,label="Sensitivity (dB)")
 fig.suptitle(f"External pseudo-color VF: predicted-from-CFP vs real perimetry  (n={n} visits)",fontsize=12)
-plt.savefig(ROOT+"/fig_external_pseudocolor.png",dpi=115,bbox_inches="tight"); plt.close()
+plt.savefig(f"{FIGURES}/fig_external_pseudocolor.png",dpi=115,bbox_inches="tight"); plt.close()
 
 # ============ 图2: 一批外部CFP的预测伪彩图(展示生成器) ============
 gkeys=list(cfp_pred)[:12]
@@ -235,5 +235,5 @@ for ax,k in zip(axes.ravel(),gkeys):
 for ax in axes.ravel()[len(gkeys):]: ax.axis("off")
 fig.colorbar(im,ax=axes.ravel().tolist(),fraction=0.02,pad=0.01,label="Predicted sensitivity (dB)")
 fig.suptitle("Predicted pseudo-color VF maps from external CFP (12 visits)",fontsize=12)
-plt.savefig(ROOT+"/fig_pred_pseudocolor_gallery.png",dpi=115,bbox_inches="tight"); plt.close()
+plt.savefig(f"{FIGURES}/fig_pred_pseudocolor_gallery.png",dpi=115,bbox_inches="tight"); plt.close()
 print("saved: external_pseudocolor.json, fig_external_pseudocolor.png, fig_pred_pseudocolor_gallery.png")

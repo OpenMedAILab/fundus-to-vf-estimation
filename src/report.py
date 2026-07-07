@@ -1,13 +1,13 @@
 """生成最终复现报告 (Markdown), 汇总 Phase 1-5 + 对照原文 + 审稿意见映射"""
 import json, glob, os, numpy as np
 from sklearn.metrics import roc_auc_score, mean_absolute_error
-from config import ROOT
-CK=ROOT+"/ckpt"; AO=["resnet","transformer","hybrid","full_hybrid"]
+from config import CKPT, DATA, RESULTS, REPORTS
+CK=CKPT; AO=["resnet","transformer","hybrid","full_hybrid"]
 def L(f): 
     try: return json.load(open(f))
     except: return None
 res=[L(f) for f in glob.glob(CK+"/*/result.json")]; res=[r for r in res if r]
-summ=L(ROOT+"/data/summary.json"); fid=L(ROOT+"/fid_kid.json"); clin=L(ROOT+"/clinical_analysis.json")
+summ=L(f"{DATA}/summary.json"); fid=L(f"{RESULTS}/fid_kid.json"); clin=L(f"{RESULTS}/clinical_analysis.json")
 
 def grp(task,aug):
     g={}
@@ -96,5 +96,5 @@ m.append("| R4-7 输入差异边际 | 三种输入点位MAE 4.07-4.22, 差异小
 m.append("| R4-8 内外差异 | GRAPE复现外部级表现(MAE~4.1 vs 内部2.34), 域偏移分析 ✅ |")
 m.append("| R3-3 误差分析 | Bland-Altman + 严重度分层 + 失败案例 ✅ |")
 m.append("| 主张降级 | full_hybrid回归最差; StyleGAN增益有限 → 支持弱化强结论 ✅ |")
-open(ROOT+"/复现报告.md","w").write("\n".join(m))
+open(f"{REPORTS}/复现报告.md","w").write("\n".join(m))
 print("saved 复现报告.md ("+str(len(m))+" lines)")

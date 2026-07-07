@@ -4,9 +4,8 @@
 """
 import json, os, glob, random, numpy as np, shutil
 random.seed(42); np.random.seed(42)
-from config import ROOT, GEN_DIR as GEN
-SYN=ROOT+"/synthetic"; os.makedirs(SYN, exist_ok=True)
-DATA=ROOT+"/data"
+from config import GEN_DIR as GEN, SYNTHETIC as SYN, DATA
+os.makedirs(SYN, exist_ok=True)
 N_SYN=150
 
 # 合成图: 用 seed*.png

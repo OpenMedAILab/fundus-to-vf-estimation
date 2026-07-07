@@ -1,7 +1,8 @@
 """Central path configuration for the GRAPE reproduction project.
 
-Every path derives from this file's own location (ROOT), so the repo runs
-from wherever it's cloned. Data that is NOT shipped in the repo — the GRAPE
+Every path derives from this file's location. `config.py` lives in `src/`, so
+ROOT is its parent directory (the repo root); all data / results / figures /
+reports folders hang off ROOT. Data that is NOT shipped in the repo — the GRAPE
 dataset, the external-validation images, the StyleGAN output, an optional CJK
 font — is looked up via environment variables, each with a sensible default
 under ROOT. Override any of them before running, e.g.:
@@ -13,8 +14,9 @@ under ROOT. Override any of them before running, e.g.:
 """
 import os
 
-# Repo root = the directory containing this file.
-ROOT = os.path.dirname(os.path.abspath(__file__))
+# This file is src/config.py -> ROOT is the repo root (parent of src/).
+SRC  = os.path.dirname(os.path.abspath(__file__))
+ROOT = os.path.dirname(SRC)
 
 
 def _env(name, default):
@@ -41,10 +43,19 @@ GRAPE_XLSX = os.path.join(GRAPE_ROOT, "VF and clinical information.xlsx")
 EXT_CFP = os.path.join(EXTERNAL_ROOT, "CFP")
 EXT_VF  = os.path.join(EXTERNAL_ROOT, "VF")
 
-# ---- In-repo outputs ----
+# ---- In-repo data (dataset split indices, VF layout, augmentation images) ----
 DATA      = os.path.join(ROOT, "data")
-CKPT      = os.path.join(ROOT, "ckpt")
-SYNTHETIC = os.path.join(ROOT, "synthetic")
+SYNTHETIC = os.path.join(DATA, "synthetic")
+VF_LAYOUT = os.path.join(DATA, "vf_layout.npy")
+
+# ---- In-repo outputs ----
+RESULTS    = os.path.join(ROOT, "results")     # metrics / analysis JSON
+CKPT       = os.path.join(RESULTS, "ckpt")     # per-run best.pth (ignored) + result.json
+LOGS       = os.path.join(RESULTS, "logs")     # training logs
+WANNAN_OUT = os.path.join(RESULTS, "wannan_extval")
+FIGURES    = os.path.join(ROOT, "figures")     # paper figures (png)
+SUPP_FIG   = os.path.join(FIGURES, "supp_fig")
+REPORTS    = os.path.join(ROOT, "reports")     # generated markdown reports
 
 
 def setup_cjk_font():

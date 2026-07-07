@@ -3,7 +3,7 @@ import os, glob, re, json, numpy as np
 from PIL import Image
 from datetime import datetime
 from scipy.stats import spearmanr, pearsonr
-from config import ROOT, EXT_VF as VF
+from config import RESULTS, EXT_VF as VF
 
 def parse(s):
     name=re.match(r'^\D+',s); name=name.group(0) if name else s
@@ -21,7 +21,7 @@ def image_ms(path):
     return a[mask].mean()/255.0*33.0 if mask.sum()>500 else None
 
 # 预测MS: 每张CFP -> (name,date,pred_MS)
-pred=json.load(open(f"{ROOT}/external_pred_ms.json"))
+pred=json.load(open(f"{RESULTS}/external_pred_ms.json"))
 cfp=[]
 for r in pred:
     if "pred_MS" not in r: continue

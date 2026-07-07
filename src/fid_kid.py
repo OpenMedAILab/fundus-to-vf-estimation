@@ -5,8 +5,8 @@ from torchvision import transforms
 from torchmetrics.image.fid import FrechetInceptionDistance
 from torchmetrics.image.kid import KernelInceptionDistance
 
-from config import GRAPE_CFP as REAL, GEN_DIR as GEN, ROOT
-OUT=os.path.join(ROOT,"fid_kid.json")
+from config import GRAPE_CFP as REAL, GEN_DIR as GEN, RESULTS
+OUT=f"{RESULTS}/fid_kid.json"
 dev="cuda" if torch.cuda.is_available() else "cpu"
 tf=transforms.Compose([transforms.Resize((256,256)), transforms.PILToTensor()])  # uint8
 

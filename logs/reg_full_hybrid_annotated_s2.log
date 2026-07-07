@@ -1,0 +1,1 @@
+[reg_full_hybrid_annotated_s2] best@15 test={"point_mae": 4.279144763946533, "point_rmse": 5.760508016329911, "point_r2": 0.29002612829208374, "ms_mae": 2.6096107959747314, "ms_r2": 0.46092259883880615}

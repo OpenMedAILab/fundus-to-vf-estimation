@@ -1,0 +1,1 @@
+[cls_resnet_annotated_s2] best@4 test={"roc_auc": 0.44166666666666665, "pr_auc": 0.12683333333333335, "sens": 0.4, "spec": 0.5, "bal_acc": 0.45, "cm": [24, 24, 3, 2], "thr": 0.1369643211364746}

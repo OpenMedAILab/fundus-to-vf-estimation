@@ -1,0 +1,1 @@
+[cls_full_hybrid_roi_s0] best@6 test={"roc_auc": 0.625, "pr_auc": 0.14630144365438483, "sens": 0.2, "spec": 0.875, "bal_acc": 0.5375, "cm": [42, 6, 4, 1], "thr": 0.7436402440071106}

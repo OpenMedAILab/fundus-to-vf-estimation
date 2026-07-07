@@ -1,0 +1,42 @@
+配置数: 20
+launch GPU1: cls_resnet_ce_nosamp_s0
+launch GPU2: cls_resnet_ce_samp_s0
+launch GPU3: cls_resnet_focal_samp_s0
+launch GPU5: cls_resnet_ce_nosamp_s1
+launch GPU7: cls_resnet_ce_samp_s1
+[1/20] done cls_resnet_ce_samp_s0 rc=0
+launch GPU2: cls_resnet_focal_samp_s1
+[2/20] done cls_resnet_focal_samp_s0 rc=0
+launch GPU3: cls_resnet_ce_nosamp_s2
+[3/20] done cls_resnet_ce_nosamp_s1 rc=0
+launch GPU5: cls_resnet_ce_samp_s2
+[4/20] done cls_resnet_ce_nosamp_s0 rc=0
+launch GPU1: cls_resnet_focal_samp_s2
+[5/20] done cls_resnet_ce_samp_s1 rc=0
+launch GPU7: cls_full_hybrid_ce_nosamp_s0
+[6/20] done cls_resnet_ce_nosamp_s2 rc=0
+launch GPU3: cls_full_hybrid_ce_samp_s0
+[7/20] done cls_resnet_focal_samp_s1 rc=0
+launch GPU2: cls_full_hybrid_focal_samp_s0
+[8/20] done cls_resnet_focal_samp_s2 rc=0
+launch GPU1: cls_full_hybrid_ce_nosamp_s1
+[9/20] done cls_resnet_ce_samp_s2 rc=0
+launch GPU5: cls_full_hybrid_ce_samp_s1
+[10/20] done cls_full_hybrid_ce_samp_s0 rc=0
+launch GPU3: cls_full_hybrid_focal_samp_s1
+[11/20] done cls_full_hybrid_ce_nosamp_s0 rc=0
+launch GPU7: cls_full_hybrid_ce_nosamp_s2
+[12/20] done cls_full_hybrid_ce_samp_s1 rc=0
+launch GPU5: cls_full_hybrid_ce_samp_s2
+[13/20] done cls_full_hybrid_focal_samp_s0 rc=0
+launch GPU2: cls_full_hybrid_focal_samp_s2
+[14/20] done cls_full_hybrid_focal_samp_s1 rc=0
+launch GPU3: reg_hybrid_conv_s0
+[15/20] done cls_full_hybrid_ce_nosamp_s1 rc=0
+launch GPU1: reg_full_hybrid_conv_s0
+[16/20] done cls_full_hybrid_ce_nosamp_s2 rc=0
+[17/20] done cls_full_hybrid_ce_samp_s2 rc=0
+[18/20] done cls_full_hybrid_focal_samp_s2 rc=0
+[19/20] done reg_full_hybrid_conv_s0 rc=0
+[20/20] done reg_hybrid_conv_s0 rc=0
+EXTRA DONE 20 in 12.1min

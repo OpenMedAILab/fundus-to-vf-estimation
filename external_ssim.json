@@ -1,0 +1,7 @@
+{
+  "n_pairs": 69,
+  "matched_SSIM_mean": -0.032970464386101614,
+  "matched_SSIM_std": 0.07059658279239972,
+  "mismatched_SSIM_mean": -0.03698227180273632,
+  "mannwhitney_p_matched>mismatched": 0.474187538103937
+}

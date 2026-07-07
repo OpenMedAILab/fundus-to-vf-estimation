@@ -1,0 +1,32 @@
+{
+  "n_pairs": 21,
+  "median_gap_days": 1,
+  "severity_MS": {
+    "spearman_r": 0.33506493506493507,
+    "spearman_p": 0.13760998567228216,
+    "pearson_r": 0.36041494850023503,
+    "pearson_p": 0.10849941581838278,
+    "R2": 0.12989893510242706,
+    "MS_MAE": 6.408168880788219,
+    "MS_MAE_calibrated": 5.832748779945421,
+    "spearman_r_discmean": 0.37792207792207794,
+    "spearman_p_discmean": 0.09119661406939479
+  },
+  "structure_SSIM": {
+    "matched_mean": 0.4142254898660616,
+    "matched_std": 0.2068487768509101,
+    "mismatched_mean": 0.4129247485547907,
+    "mismatched_std": 0.19809928707974195,
+    "mannwhitney_p_matched_gt_mismatched": 0.44069371913444266
+  },
+  "pointwise": {
+    "per_eye_spearman_mean": 0.09720367330577055,
+    "per_eye_spearman_median": 0.1181181145702404,
+    "frac_eyes_p_pos": 0.8095238095238095
+  },
+  "hemifield_asym": {
+    "spearman_r": -0.031168831168831172,
+    "spearman_p": 0.893308173976082
+  },
+  "note": "独立新实现; 凡例LUT较准; grid/box掩膜; 27°正准盘; OD/OS镜像不变; inference-only"
+}

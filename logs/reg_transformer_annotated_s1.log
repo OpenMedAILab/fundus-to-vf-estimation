@@ -1,0 +1,1 @@
+[reg_transformer_annotated_s1] best@9 test={"point_mae": 4.15385627746582, "point_rmse": 5.793571908923474, "point_r2": 0.2818526029586792, "ms_mae": 2.6365249156951904, "ms_r2": 0.42176538705825806}

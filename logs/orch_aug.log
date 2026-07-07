@@ -1,0 +1,50 @@
+配置总数: 24 | GPU: [1, 2, 3, 5, 7] | aug=True
+launch GPU1: reg_resnet_cfp_s0
+launch GPU2: reg_resnet_cfp_s1
+launch GPU3: reg_resnet_cfp_s2
+launch GPU5: reg_transformer_cfp_s0
+launch GPU7: reg_transformer_cfp_s1
+[1/24] done GPU2: reg_resnet_cfp_s1 (rc=0) | 2.9min
+launch GPU2: reg_transformer_cfp_s2
+[2/24] done GPU3: reg_resnet_cfp_s2 (rc=0) | 3.9min
+launch GPU3: reg_hybrid_cfp_s0
+[3/24] done GPU1: reg_resnet_cfp_s0 (rc=0) | 4.4min
+launch GPU1: reg_hybrid_cfp_s1
+[4/24] done GPU7: reg_transformer_cfp_s1 (rc=0) | 7.1min
+launch GPU7: reg_hybrid_cfp_s2
+[5/24] done GPU5: reg_transformer_cfp_s0 (rc=0) | 7.9min
+launch GPU5: reg_full_hybrid_cfp_s0
+[6/24] done GPU2: reg_transformer_cfp_s2 (rc=0) | 8.0min
+launch GPU2: reg_full_hybrid_cfp_s1
+[7/24] done GPU1: reg_hybrid_cfp_s1 (rc=0) | 8.3min
+launch GPU1: reg_full_hybrid_cfp_s2
+[8/24] done GPU3: reg_hybrid_cfp_s0 (rc=0) | 9.5min
+launch GPU3: cls_resnet_cfp_s0
+[9/24] done GPU3: cls_resnet_cfp_s0 (rc=0) | 10.5min
+launch GPU3: cls_resnet_cfp_s1
+[10/24] done GPU3: cls_resnet_cfp_s1 (rc=0) | 12.0min
+launch GPU3: cls_resnet_cfp_s2
+[11/24] done GPU7: reg_hybrid_cfp_s2 (rc=0) | 12.9min
+launch GPU7: cls_transformer_cfp_s0
+[12/24] done GPU5: reg_full_hybrid_cfp_s0 (rc=0) | 13.5min
+launch GPU5: cls_transformer_cfp_s1
+[13/24] done GPU3: cls_resnet_cfp_s2 (rc=0) | 13.9min
+launch GPU3: cls_transformer_cfp_s2
+[14/24] done GPU5: cls_transformer_cfp_s1 (rc=0) | 14.9min
+launch GPU5: cls_hybrid_cfp_s0
+[15/24] done GPU3: cls_transformer_cfp_s2 (rc=0) | 15.5min
+launch GPU3: cls_hybrid_cfp_s1
+[16/24] done GPU1: reg_full_hybrid_cfp_s2 (rc=0) | 15.7min
+launch GPU1: cls_hybrid_cfp_s2
+[17/24] done GPU2: reg_full_hybrid_cfp_s1 (rc=0) | 16.3min
+launch GPU2: cls_full_hybrid_cfp_s0
+[18/24] done GPU7: cls_transformer_cfp_s0 (rc=0) | 16.6min
+launch GPU7: cls_full_hybrid_cfp_s1
+[19/24] done GPU5: cls_hybrid_cfp_s0 (rc=0) | 16.8min
+launch GPU5: cls_full_hybrid_cfp_s2
+[20/24] done GPU1: cls_hybrid_cfp_s2 (rc=0) | 17.2min
+[21/24] done GPU3: cls_hybrid_cfp_s1 (rc=0) | 17.5min
+[22/24] done GPU2: cls_full_hybrid_cfp_s0 (rc=0) | 17.9min
+[23/24] done GPU5: cls_full_hybrid_cfp_s2 (rc=0) | 18.2min
+[24/24] done GPU7: cls_full_hybrid_cfp_s1 (rc=0) | 19.0min
+ALL DONE: 24 configs in 19.0 min

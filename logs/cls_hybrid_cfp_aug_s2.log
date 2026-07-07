@@ -1,0 +1,1 @@
+[cls_hybrid_cfp_aug_s2] best@1 test={"roc_auc": 0.6, "pr_auc": 0.14863807760866585, "sens": 0.0, "spec": 1.0, "bal_acc": 0.5, "cm": [48, 0, 5, 0], "thr": 0.6786720752716064}

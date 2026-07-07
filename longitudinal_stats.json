@@ -1,0 +1,33 @@
+{
+  "total_followup_records": 1115,
+  "records_with_image": 631,
+  "unique_eyes_with_image": 263,
+  "visits_per_eye(image)": {
+    "mean": 2.3992395437262357,
+    "min": 1,
+    "max": 7,
+    "dist": {
+      "1": 67,
+      "2": 91,
+      "3": 68,
+      "4": 16,
+      "5": 14,
+      "6": 5,
+      "7": 2
+    }
+  },
+  "interval_years": {
+    "mean": 1.072105828099012,
+    "median": 0.5835616438356165,
+    "min": 0.0,
+    "max": 4.833941605839416,
+    "p25": 0.0,
+    "p75": 1.8476277372262775
+  },
+  "followup_span_years_per_eye": {
+    "mean": 1.715373846933069,
+    "max": 4.833941605839416,
+    "eyes_ge1yr": 174,
+    "eyes_ge2yr": 107
+  }
+}

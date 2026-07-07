@@ -1,0 +1,1 @@
+[cls_full_hybrid_cfp_focal_samp_s1] best@9 test={"roc_auc": 0.6791666666666667, "pr_auc": 0.17210526315789476, "sens": 0.4, "spec": 0.8125, "bal_acc": 0.60625, "cm": [39, 9, 3, 2], "thr": 0.6564291715621948}

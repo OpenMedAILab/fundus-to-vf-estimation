@@ -1,0 +1,31 @@
+# ---- Model weights (excluded: ~35 GB, kept on training server) ----
+*.pth
+*.pt
+*.ckpt
+*.safetensors
+
+# ---- Raw datasets (not redistributable / contain PHI) ----
+GRAPE Dataset/
+external/
+VF/
+*.dcm
+
+# ---- Files containing patient PHI (real names+dates) — kept locally, not pushed ----
+external_ms_pairing.json
+external_pred_ms.json
+wannan_extval/wannan_extval_pairs.json
+
+# ---- Python ----
+__pycache__/
+*.py[cod]
+*.egg-info/
+.ipynb_checkpoints/
+.venv/
+venv/
+env/
+
+# ---- OS / editor ----
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/

@@ -1,0 +1,1 @@
+[cls_transformer_annotated_s1] best@1 test={"roc_auc": 0.6833333333333333, "pr_auc": 0.22413365346138453, "sens": 0.2, "spec": 0.9375, "bal_acc": 0.56875, "cm": [45, 3, 4, 1], "thr": 0.689964771270752}

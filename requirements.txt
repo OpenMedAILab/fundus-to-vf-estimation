@@ -1,0 +1,16 @@
+# Core DL
+torch
+torchvision
+timm
+torchmetrics
+
+# Scientific / ML
+numpy
+pandas
+scipy
+scikit-learn
+scikit-image
+
+# Imaging & plotting
+Pillow
+matplotlib

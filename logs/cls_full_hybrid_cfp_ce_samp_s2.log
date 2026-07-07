@@ -1,0 +1,1 @@
+[cls_full_hybrid_cfp_ce_samp_s2] best@5 test={"roc_auc": 0.75, "pr_auc": 0.2311875843454791, "sens": 0.8, "spec": 0.75, "bal_acc": 0.775, "cm": [36, 12, 1, 4], "thr": 0.5203589200973511}

@@ -1,0 +1,426 @@
+[
+ {
+  "subject": 5,
+  "eye": "OS",
+  "cfp_filename": "5_OS_1.jpg",
+  "plr3": 0,
+  "plr2": 0,
+  "md": 0.0
+ },
+ {
+  "subject": 10,
+  "eye": "OD",
+  "cfp_filename": "10_OD_1.jpg",
+  "plr3": 1,
+  "plr2": 1,
+  "md": 1.0
+ },
+ {
+  "subject": 10,
+  "eye": "OS",
+  "cfp_filename": "10_OS_1.jpg",
+  "plr3": 0,
+  "plr2": 1,
+  "md": 0.0
+ },
+ {
+  "subject": 12,
+  "eye": "OD",
+  "cfp_filename": "12_OD_1.jpg",
+  "plr3": 0,
+  "plr2": 0,
+  "md": 1.0
+ },
+ {
+  "subject": 12,
+  "eye": "OS",
+  "cfp_filename": "12_OS_1.jpg",
+  "plr3": 0,
+  "plr2": 0,
+  "md": 0.0
+ },
+ {
+  "subject": 13,
+  "eye": "OD",
+  "cfp_filename": "13_OD_1.jpg",
+  "plr3": 0,
+  "plr2": 0,
+  "md": 0.0
+ },
+ {
+  "subject": 13,
+  "eye": "OS",
+  "cfp_filename": "13_OS_1.jpg",
+  "plr3": 0,
+  "plr2": 0,
+  "md": 0.0
+ },
+ {
+  "subject": 19,
+  "eye": "OD",
+  "cfp_filename": "19_OD_1.jpg",
+  "plr3": 0,
+  "plr2": 0,
+  "md": 0.0
+ },
+ {
+  "subject": 20,
+  "eye": "OD",
+  "cfp_filename": "20_OD_1.jpg",
+  "plr3": 0,
+  "plr2": 0,
+  "md": 0.0
+ },
+ {
+  "subject": 27,
+  "eye": "OD",
+  "cfp_filename": "27_OD_1.jpg",
+  "plr3": 0,
+  "plr2": 0,
+  "md": 0.0
+ },
+ {
+  "subject": 27,
+  "eye": "OS",
+  "cfp_filename": "27_OS_1.jpg",
+  "plr3": 0,
+  "plr2": 0,
+  "md": 0.0
+ },
+ {
+  "subject": 28,
+  "eye": "OD",
+  "cfp_filename": "28_OD_1.jpg",
+  "plr3": 0,
+  "plr2": 0,
+  "md": 0.0
+ },
+ {
+  "subject": 28,
+  "eye": "OS",
+  "cfp_filename": "28_OS_1.jpg",
+  "plr3": 0,
+  "plr2": 0,
+  "md": 0.0
+ },
+ {
+  "subject": 46,
+  "eye": "OD",
+  "cfp_filename": "46_OD_1.jpg",
+  "plr3": 0,
+  "plr2": 0,
+  "md": 0.0
+ },
+ {
+  "subject": 46,
+  "eye": "OS",
+  "cfp_filename": "46_OS_1.jpg",
+  "plr3": 0,
+  "plr2": 0,
+  "md": 0.0
+ },
+ {
+  "subject": 52,
+  "eye": "OD",
+  "cfp_filename": "52_OD_1.jpg",
+  "plr3": 0,
+  "plr2": 0,
+  "md": 0.0
+ },
+ {
+  "subject": 52,
+  "eye": "OS",
+  "cfp_filename": "52_OS_1.jpg",
+  "plr3": 1,
+  "plr2": 1,
+  "md": 0.0
+ },
+ {
+  "subject": 56,
+  "eye": "OD",
+  "cfp_filename": "56_OD_1.jpg",
+  "plr3": 0,
+  "plr2": 0,
+  "md": 0.0
+ },
+ {
+  "subject": 56,
+  "eye": "OS",
+  "cfp_filename": "56_OS_1.jpg",
+  "plr3": 0,
+  "plr2": 0,
+  "md": 0.0
+ },
+ {
+  "subject": 57,
+  "eye": "OD",
+  "cfp_filename": "57_OD_1.jpg",
+  "plr3": 0,
+  "plr2": 1,
+  "md": 0.0
+ },
+ {
+  "subject": 57,
+  "eye": "OS",
+  "cfp_filename": "57_OS_1.jpg",
+  "plr3": 0,
+  "plr2": 0,
+  "md": 0.0
+ },
+ {
+  "subject": 65,
+  "eye": "OD",
+  "cfp_filename": "65_OD_1.jpg",
+  "plr3": 0,
+  "plr2": 0,
+  "md": 0.0
+ },
+ {
+  "subject": 65,
+  "eye": "OS",
+  "cfp_filename": "65_OS_1.jpg",
+  "plr3": 0,
+  "plr2": 0,
+  "md": 0.0
+ },
+ {
+  "subject": 66,
+  "eye": "OD",
+  "cfp_filename": "66_OD_1.jpg",
+  "plr3": 0,
+  "plr2": 0,
+  "md": 0.0
+ },
+ {
+  "subject": 67,
+  "eye": "OD",
+  "cfp_filename": "67_OD_1.jpg",
+  "plr3": 0,
+  "plr2": 0,
+  "md": 0.0
+ },
+ {
+  "subject": 67,
+  "eye": "OS",
+  "cfp_filename": "67_OS_1.jpg",
+  "plr3": 0,
+  "plr2": 0,
+  "md": 0.0
+ },
+ {
+  "subject": 70,
+  "eye": "OD",
+  "cfp_filename": "70_OD_1.jpg",
+  "plr3": 0,
+  "plr2": 0,
+  "md": 0.0
+ },
+ {
+  "subject": 70,
+  "eye": "OS",
+  "cfp_filename": "70_OS_1.jpg",
+  "plr3": 0,
+  "plr2": 1,
+  "md": 0.0
+ },
+ {
+  "subject": 74,
+  "eye": "OS",
+  "cfp_filename": "74_OS_1.jpg",
+  "plr3": 0,
+  "plr2": 0,
+  "md": 0.0
+ },
+ {
+  "subject": 79,
+  "eye": "OD",
+  "cfp_filename": "79_OD_1.jpg",
+  "plr3": 0,
+  "plr2": 0,
+  "md": 0.0
+ },
+ {
+  "subject": 79,
+  "eye": "OS",
+  "cfp_filename": "79_OS_1.jpg",
+  "plr3": 0,
+  "plr2": 0,
+  "md": 0.0
+ },
+ {
+  "subject": 83,
+  "eye": "OD",
+  "cfp_filename": "83_OD_1.jpg",
+  "plr3": 0,
+  "plr2": 0,
+  "md": 0.0
+ },
+ {
+  "subject": 83,
+  "eye": "OS",
+  "cfp_filename": "83_OS_1.jpg",
+  "plr3": 0,
+  "plr2": 0,
+  "md": 0.0
+ },
+ {
+  "subject": 95,
+  "eye": "OD",
+  "cfp_filename": "95_OD_1.jpg",
+  "plr3": 0,
+  "plr2": 0,
+  "md": 0.0
+ },
+ {
+  "subject": 95,
+  "eye": "OS",
+  "cfp_filename": "95_OS_1.jpg",
+  "plr3": 0,
+  "plr2": 1,
+  "md": 0.0
+ },
+ {
+  "subject": 98,
+  "eye": "OD",
+  "cfp_filename": "98_OD_1.jpg",
+  "plr3": 0,
+  "plr2": 0,
+  "md": 0.0
+ },
+ {
+  "subject": 98,
+  "eye": "OS",
+  "cfp_filename": "98_OS_1.jpg",
+  "plr3": 0,
+  "plr2": 0,
+  "md": 1.0
+ },
+ {
+  "subject": 101,
+  "eye": "OD",
+  "cfp_filename": "101_OD_1.jpg",
+  "plr3": 0,
+  "plr2": 0,
+  "md": 0.0
+ },
+ {
+  "subject": 101,
+  "eye": "OS",
+  "cfp_filename": "101_OS_1.jpg",
+  "plr3": 1,
+  "plr2": 1,
+  "md": 1.0
+ },
+ {
+  "subject": 111,
+  "eye": "OD",
+  "cfp_filename": "111_OD_1.jpg",
+  "plr3": 1,
+  "plr2": 1,
+  "md": 0.0
+ },
+ {
+  "subject": 111,
+  "eye": "OS",
+  "cfp_filename": "111_OS_1.jpg",
+  "plr3": 1,
+  "plr2": 1,
+  "md": 0.0
+ },
+ {
+  "subject": 114,
+  "eye": "OD",
+  "cfp_filename": "114_OD_1.jpg",
+  "plr3": 0,
+  "plr2": 0,
+  "md": 0.0
+ },
+ {
+  "subject": 114,
+  "eye": "OS",
+  "cfp_filename": "114_OS_1.jpg",
+  "plr3": 0,
+  "plr2": 0,
+  "md": 0.0
+ },
+ {
+  "subject": 118,
+  "eye": "OD",
+  "cfp_filename": "118_OD_1.jpg",
+  "plr3": 0,
+  "plr2": 0,
+  "md": 0.0
+ },
+ {
+  "subject": 118,
+  "eye": "OS",
+  "cfp_filename": "118_OS_1.jpg",
+  "plr3": 0,
+  "plr2": 0,
+  "md": 0.0
+ },
+ {
+  "subject": 120,
+  "eye": "OD",
+  "cfp_filename": "120_OD_1.jpg",
+  "plr3": 0,
+  "plr2": 0,
+  "md": 0.0
+ },
+ {
+  "subject": 120,
+  "eye": "OS",
+  "cfp_filename": "120_OS_1.jpg",
+  "plr3": 0,
+  "plr2": 0,
+  "md": 0.0
+ },
+ {
+  "subject": 126,
+  "eye": "OD",
+  "cfp_filename": "126_OD_1.jpg",
+  "plr3": 0,
+  "plr2": 0,
+  "md": 0.0
+ },
+ {
+  "subject": 126,
+  "eye": "OS",
+  "cfp_filename": "126_OS_1.jpg",
+  "plr3": 0,
+  "plr2": 1,
+  "md": 0.0
+ },
+ {
+  "subject": 133,
+  "eye": "OD",
+  "cfp_filename": "133_OD_1.jpg",
+  "plr3": 0,
+  "plr2": 0,
+  "md": 0.0
+ },
+ {
+  "subject": 133,
+  "eye": "OS",
+  "cfp_filename": "133_OS_1.jpg",
+  "plr3": 0,
+  "plr2": 0,
+  "md": 0.0
+ },
+ {
+  "subject": 134,
+  "eye": "OD",
+  "cfp_filename": "134_OD_1.jpg",
+  "plr3": 0,
+  "plr2": 0,
+  "md": 0.0
+ },
+ {
+  "subject": 134,
+  "eye": "OS",
+  "cfp_filename": "134_OS_1.jpg",
+  "plr3": 0,
+  "plr2": 0,
+  "md": 0.0
+ }
+]

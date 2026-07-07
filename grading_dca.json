@@ -1,0 +1,94 @@
+{
+  "best_config": "hybrid_cfp",
+  "grading_cutoffs_MS": {
+    "mild": ">=26",
+    "moderate": "22-26",
+    "severe": "<22"
+  },
+  "confusion_matrix(rows=true,cols=pred; mild/mod/severe)": [
+    [
+      0,
+      19,
+      2
+    ],
+    [
+      0,
+      37,
+      16
+    ],
+    [
+      0,
+      9,
+      49
+    ]
+  ],
+  "cohen_kappa": 0.39839492717725156,
+  "weighted_kappa_linear": 0.44904347826086954,
+  "severe_vs_rest": {
+    "sens": 0.8448275862068966,
+    "spec": 0.7567567567567568,
+    "cm_tn_fp_fn_tp": [
+      56,
+      18,
+      9,
+      49
+    ]
+  },
+  "decision_curve": [
+    {
+      "pt": 0.05,
+      "net_benefit_model": 0.4126794258373206,
+      "net_benefit_treat_all": 0.4098883572567783
+    },
+    {
+      "pt": 0.1,
+      "net_benefit_model": 0.39225589225589225,
+      "net_benefit_treat_all": 0.3771043771043771
+    },
+    {
+      "pt": 0.15,
+      "net_benefit_model": 0.3819073083778966,
+      "net_benefit_treat_all": 0.3404634581105169
+    },
+    {
+      "pt": 0.2,
+      "net_benefit_model": 0.3560606060606061,
+      "net_benefit_treat_all": 0.29924242424242425
+    },
+    {
+      "pt": 0.25,
+      "net_benefit_model": 0.3434343434343434,
+      "net_benefit_treat_all": 0.25252525252525254
+    },
+    {
+      "pt": 0.3,
+      "net_benefit_model": 0.3041125541125541,
+      "net_benefit_treat_all": 0.19913419913419914
+    },
+    {
+      "pt": 0.35,
+      "net_benefit_model": 0.2919580419580419,
+      "net_benefit_treat_all": 0.13752913752913754
+    },
+    {
+      "pt": 0.4,
+      "net_benefit_model": 0.26010101010101006,
+      "net_benefit_treat_all": 0.06565656565656564
+    },
+    {
+      "pt": 0.45,
+      "net_benefit_model": 0.24380165289256198,
+      "net_benefit_treat_all": -0.019283746556473746
+    },
+    {
+      "pt": 0.5,
+      "net_benefit_model": 0.2196969696969697,
+      "net_benefit_treat_all": -0.12121212121212116
+    },
+    {
+      "pt": 0.55,
+      "net_benefit_model": 0.18181818181818182,
+      "net_benefit_treat_all": -0.24579124579124595
+    }
+  ]
+}

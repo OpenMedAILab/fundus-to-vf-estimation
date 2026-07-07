@@ -1,0 +1,1 @@
+[cls_resnet_cfp_focal_samp_s2] best@17 test={"roc_auc": 0.43333333333333335, "pr_auc": 0.10273105959081569, "sens": 0.0, "spec": 1.0, "bal_acc": 0.5, "cm": [48, 0, 5, 0], "thr": 0.3318520188331604}

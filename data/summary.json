@@ -1,0 +1,49 @@
+{
+  "patient_split": {
+    "train": 92,
+    "val": 23,
+    "test": 29
+  },
+  "leakage_clean": true,
+  "vf_points": 61,
+  "reg": {
+    "train": {
+      "records": 410,
+      "subjects": 92,
+      "eyes": 168,
+      "plr3_pos": 11
+    },
+    "val": {
+      "records": 89,
+      "subjects": 23,
+      "eyes": 42,
+      "plr3_pos": 7
+    },
+    "test": {
+      "records": 132,
+      "subjects": 29,
+      "eyes": 53,
+      "plr3_pos": 12
+    }
+  },
+  "cls": {
+    "train": {
+      "records": 168,
+      "subjects": 92,
+      "eyes": 168,
+      "plr3_pos": 5
+    },
+    "val": {
+      "records": 42,
+      "subjects": 23,
+      "eyes": 42,
+      "plr3_pos": 4
+    },
+    "test": {
+      "records": 53,
+      "subjects": 29,
+      "eyes": 53,
+      "plr3_pos": 5
+    }
+  }
+}

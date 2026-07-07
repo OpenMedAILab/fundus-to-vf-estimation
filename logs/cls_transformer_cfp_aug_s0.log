@@ -1,0 +1,1 @@
+[cls_transformer_cfp_aug_s0] best@35 test={"roc_auc": 0.8208333333333334, "pr_auc": 0.244972804972805, "sens": 1.0, "spec": 0.625, "bal_acc": 0.8125, "cm": [30, 18, 0, 5], "thr": 0.5964109301567078}

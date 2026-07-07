@@ -1,0 +1,1 @@
+[cls_full_hybrid_annotated_s2] best@2 test={"roc_auc": 0.7250000000000001, "pr_auc": 0.2513553113553113, "sens": 0.6, "spec": 0.8125, "bal_acc": 0.70625, "cm": [39, 9, 2, 3], "thr": 0.6015393137931824}

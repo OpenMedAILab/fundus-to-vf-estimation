@@ -1,0 +1,13 @@
+{
+  "n_struct_pairs": 22,
+  "matched_SSIM_mean": 0.4833067762467918,
+  "matched_SSIM_std": 0.2591618693519596,
+  "mismatched_SSIM_mean": 0.4587625862252647,
+  "mismatched_SSIM_std": 0.24298338750773224,
+  "mannwhitney_p_matched>mismatched": 0.3395500526152806,
+  "hemifield_asym_spearman_r": 0.11123658949745907,
+  "hemifield_asym_spearman_p": 0.622136487426624,
+  "spatialMS_spearman_r": 0.5053642010163749,
+  "spatialMS_spearman_p": 0.016432200785230888,
+  "note": "30°中央页筛选; OD/OS取镜像较优; 局部窗口SSIM(skimage,圆盘内); VF访次级去重; inference-only"
+}

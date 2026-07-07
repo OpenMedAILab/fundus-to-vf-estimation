@@ -1,0 +1,146 @@
+配置总数: 72 | GPU: [1, 2, 3, 5, 7] | aug=False
+launch GPU1: reg_resnet_cfp_s0
+launch GPU2: reg_resnet_cfp_s1
+launch GPU3: reg_resnet_cfp_s2
+launch GPU5: reg_resnet_roi_s0
+launch GPU7: reg_resnet_roi_s1
+[1/72] done GPU5: reg_resnet_roi_s0 (rc=0) | 1.6min
+launch GPU5: reg_resnet_roi_s2
+[2/72] done GPU7: reg_resnet_roi_s1 (rc=0) | 1.9min
+launch GPU7: reg_resnet_annotated_s0
+[3/72] done GPU5: reg_resnet_roi_s2 (rc=0) | 3.3min
+launch GPU5: reg_resnet_annotated_s1
+[4/72] done GPU7: reg_resnet_annotated_s0 (rc=0) | 4.1min
+launch GPU7: reg_resnet_annotated_s2
+[5/72] done GPU1: reg_resnet_cfp_s0 (rc=0) | 4.7min
+launch GPU1: reg_transformer_cfp_s0
+[6/72] done GPU5: reg_resnet_annotated_s1 (rc=0) | 4.8min
+launch GPU5: reg_transformer_cfp_s1
+[7/72] done GPU2: reg_resnet_cfp_s1 (rc=0) | 5.5min
+[8/72] done GPU7: reg_resnet_annotated_s2 (rc=0) | 5.5min
+launch GPU2: reg_transformer_cfp_s2
+launch GPU7: reg_transformer_roi_s0
+[9/72] done GPU3: reg_resnet_cfp_s2 (rc=0) | 7.7min
+launch GPU3: reg_transformer_roi_s1
+[10/72] done GPU7: reg_transformer_roi_s0 (rc=0) | 7.9min
+launch GPU7: reg_transformer_roi_s2
+[11/72] done GPU7: reg_transformer_roi_s2 (rc=0) | 9.5min
+launch GPU7: reg_transformer_annotated_s0
+[12/72] done GPU3: reg_transformer_roi_s1 (rc=0) | 10.4min
+launch GPU3: reg_transformer_annotated_s1
+[13/72] done GPU7: reg_transformer_annotated_s0 (rc=0) | 11.5min
+launch GPU7: reg_transformer_annotated_s2
+[14/72] done GPU1: reg_transformer_cfp_s0 (rc=0) | 11.9min
+launch GPU1: reg_hybrid_cfp_s0
+[15/72] done GPU3: reg_transformer_annotated_s1 (rc=0) | 12.0min
+launch GPU3: reg_hybrid_cfp_s1
+[16/72] done GPU5: reg_transformer_cfp_s1 (rc=0) | 13.3min
+launch GPU5: reg_hybrid_cfp_s2
+[17/72] done GPU7: reg_transformer_annotated_s2 (rc=0) | 13.7min
+launch GPU7: reg_hybrid_roi_s0
+[18/72] done GPU2: reg_transformer_cfp_s2 (rc=0) | 14.9min
+launch GPU2: reg_hybrid_roi_s1
+[19/72] done GPU7: reg_hybrid_roi_s0 (rc=0) | 15.9min
+launch GPU7: reg_hybrid_roi_s2
+[20/72] done GPU1: reg_hybrid_cfp_s0 (rc=0) | 16.3min
+launch GPU1: reg_hybrid_annotated_s0
+[21/72] done GPU5: reg_hybrid_cfp_s2 (rc=0) | 17.2min
+launch GPU5: reg_hybrid_annotated_s1
+[22/72] done GPU2: reg_hybrid_roi_s1 (rc=0) | 18.0min
+launch GPU2: reg_hybrid_annotated_s2
+[23/72] done GPU1: reg_hybrid_annotated_s0 (rc=0) | 18.6min
+launch GPU1: reg_full_hybrid_cfp_s0
+[24/72] done GPU7: reg_hybrid_roi_s2 (rc=0) | 19.0min
+launch GPU7: reg_full_hybrid_cfp_s1
+[25/72] done GPU3: reg_hybrid_cfp_s1 (rc=0) | 19.4min
+launch GPU3: reg_full_hybrid_cfp_s2
+[26/72] done GPU2: reg_hybrid_annotated_s2 (rc=0) | 20.2min
+launch GPU2: reg_full_hybrid_roi_s0
+[27/72] done GPU5: reg_hybrid_annotated_s1 (rc=0) | 20.3min
+launch GPU5: reg_full_hybrid_roi_s1
+[28/72] done GPU1: reg_full_hybrid_cfp_s0 (rc=0) | 21.8min
+launch GPU1: reg_full_hybrid_roi_s2
+[29/72] done GPU5: reg_full_hybrid_roi_s1 (rc=0) | 22.6min
+launch GPU5: reg_full_hybrid_annotated_s0
+[30/72] done GPU2: reg_full_hybrid_roi_s0 (rc=0) | 23.0min
+launch GPU2: reg_full_hybrid_annotated_s1
+[31/72] done GPU1: reg_full_hybrid_roi_s2 (rc=0) | 25.2min
+launch GPU1: reg_full_hybrid_annotated_s2
+[32/72] done GPU7: reg_full_hybrid_cfp_s1 (rc=0) | 25.6min
+launch GPU7: cls_resnet_cfp_s0
+[33/72] done GPU2: reg_full_hybrid_annotated_s1 (rc=0) | 25.8min
+launch GPU2: cls_resnet_cfp_s1
+[34/72] done GPU3: reg_full_hybrid_cfp_s2 (rc=0) | 25.9min
+launch GPU3: cls_resnet_cfp_s2
+[35/72] done GPU5: reg_full_hybrid_annotated_s0 (rc=0) | 26.6min
+launch GPU5: cls_resnet_roi_s0
+[36/72] done GPU7: cls_resnet_cfp_s0 (rc=0) | 27.1min
+launch GPU7: cls_resnet_roi_s1
+[37/72] done GPU5: cls_resnet_roi_s0 (rc=0) | 27.2min
+launch GPU5: cls_resnet_roi_s2
+[38/72] done GPU1: reg_full_hybrid_annotated_s2 (rc=0) | 27.5min
+launch GPU1: cls_resnet_annotated_s0
+[39/72] done GPU7: cls_resnet_roi_s1 (rc=0) | 27.6min
+launch GPU7: cls_resnet_annotated_s1
+[40/72] done GPU5: cls_resnet_roi_s2 (rc=0) | 27.8min
+launch GPU5: cls_resnet_annotated_s2
+[41/72] done GPU2: cls_resnet_cfp_s1 (rc=0) | 27.9min
+launch GPU2: cls_transformer_cfp_s0
+[42/72] done GPU1: cls_resnet_annotated_s0 (rc=0) | 28.0min
+launch GPU1: cls_transformer_cfp_s1
+[43/72] done GPU3: cls_resnet_cfp_s2 (rc=0) | 28.2min
+[44/72] done GPU7: cls_resnet_annotated_s1 (rc=0) | 28.2min
+launch GPU3: cls_transformer_cfp_s2
+launch GPU7: cls_transformer_roi_s0
+[45/72] done GPU5: cls_resnet_annotated_s2 (rc=0) | 28.3min
+launch GPU5: cls_transformer_roi_s1
+[46/72] done GPU5: cls_transformer_roi_s1 (rc=0) | 29.1min
+launch GPU5: cls_transformer_roi_s2
+[47/72] done GPU7: cls_transformer_roi_s0 (rc=0) | 29.4min
+launch GPU7: cls_transformer_annotated_s0
+[48/72] done GPU1: cls_transformer_cfp_s1 (rc=0) | 29.6min
+launch GPU1: cls_transformer_annotated_s1
+[49/72] done GPU3: cls_transformer_cfp_s2 (rc=0) | 29.8min
+launch GPU3: cls_transformer_annotated_s2
+[50/72] done GPU7: cls_transformer_annotated_s0 (rc=0) | 30.2min
+launch GPU7: cls_hybrid_cfp_s0
+[51/72] done GPU5: cls_transformer_roi_s2 (rc=0) | 30.3min
+launch GPU5: cls_hybrid_cfp_s1
+[52/72] done GPU1: cls_transformer_annotated_s1 (rc=0) | 30.4min
+launch GPU1: cls_hybrid_cfp_s2
+[53/72] done GPU2: cls_transformer_cfp_s0 (rc=0) | 30.7min
+launch GPU2: cls_hybrid_roi_s0
+[54/72] done GPU3: cls_transformer_annotated_s2 (rc=0) | 31.0min
+launch GPU3: cls_hybrid_roi_s1
+[55/72] done GPU5: cls_hybrid_cfp_s1 (rc=0) | 31.9min
+launch GPU5: cls_hybrid_roi_s2
+[56/72] done GPU7: cls_hybrid_cfp_s0 (rc=0) | 32.0min
+[57/72] done GPU1: cls_hybrid_cfp_s2 (rc=0) | 32.0min
+launch GPU7: cls_hybrid_annotated_s0
+launch GPU1: cls_hybrid_annotated_s1
+[58/72] done GPU3: cls_hybrid_roi_s1 (rc=0) | 32.2min
+launch GPU3: cls_hybrid_annotated_s2
+[59/72] done GPU5: cls_hybrid_roi_s2 (rc=0) | 33.0min
+launch GPU5: cls_full_hybrid_cfp_s0
+[60/72] done GPU7: cls_hybrid_annotated_s0 (rc=0) | 33.1min
+[61/72] done GPU1: cls_hybrid_annotated_s1 (rc=0) | 33.1min
+launch GPU7: cls_full_hybrid_cfp_s1
+launch GPU1: cls_full_hybrid_cfp_s2
+[62/72] done GPU2: cls_hybrid_roi_s0 (rc=0) | 33.4min
+launch GPU2: cls_full_hybrid_roi_s0
+[63/72] done GPU3: cls_hybrid_annotated_s2 (rc=0) | 33.6min
+launch GPU3: cls_full_hybrid_roi_s1
+[64/72] done GPU2: cls_full_hybrid_roi_s0 (rc=0) | 34.4min
+launch GPU2: cls_full_hybrid_roi_s2
+[65/72] done GPU1: cls_full_hybrid_cfp_s2 (rc=0) | 34.8min
+[66/72] done GPU3: cls_full_hybrid_roi_s1 (rc=0) | 34.8min
+launch GPU1: cls_full_hybrid_annotated_s0
+launch GPU3: cls_full_hybrid_annotated_s1
+[67/72] done GPU5: cls_full_hybrid_cfp_s0 (rc=0) | 35.4min
+[68/72] done GPU2: cls_full_hybrid_roi_s2 (rc=0) | 35.4min
+launch GPU5: cls_full_hybrid_annotated_s2
+[69/72] done GPU3: cls_full_hybrid_annotated_s1 (rc=0) | 35.9min
+[70/72] done GPU1: cls_full_hybrid_annotated_s0 (rc=0) | 36.0min
+[71/72] done GPU5: cls_full_hybrid_annotated_s2 (rc=0) | 36.3min
+[72/72] done GPU7: cls_full_hybrid_cfp_s1 (rc=0) | 37.1min
+ALL DONE: 72 configs in 37.1 min

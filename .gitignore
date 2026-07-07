@@ -10,10 +10,8 @@ external/
 VF/
 *.dcm
 
-# ---- Files containing patient PHI (real names+dates) — kept locally, not pushed ----
-external_ms_pairing.json
-external_pred_ms.json
-wannan_extval/wannan_extval_pairs.json
+# ---- De-identification key (maps P### <-> real names) — NEVER push ----
+deid_mapping.json
 
 # ---- Python ----
 __pycache__/

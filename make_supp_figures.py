@@ -12,7 +12,7 @@ from sklearn.metrics import mean_absolute_error
 import matplotlib; matplotlib.use("Agg"); import matplotlib.pyplot as plt
 from matplotlib.patches import FancyBboxPatch, FancyArrowPatch
 
-ROOT = "/remote-home/guijiangsheng/yyy/yang/fix_paper/qgy_xf/reproduce_full"
+from config import ROOT
 import os; OUT = ROOT + "/supp_fig"; os.makedirs(OUT, exist_ok=True)
 
 # ---------- 载入最优回归配置的 test 预测(跨seed集成) ----------

@@ -10,7 +10,7 @@ ap.add_argument("--archs", default="resnet,transformer,hybrid,full_hybrid")
 ap.add_argument("--inputs", default="cfp,roi,annotated")
 ap.add_argument("--epochs", type=int, default=80)
 a = ap.parse_args()
-ROOT = "/remote-home/guijiangsheng/yyy/yang/fix_paper/qgy_xf/reproduce_full"
+from config import ROOT
 os.makedirs(f"{ROOT}/logs", exist_ok=True)
 GPUS = [int(g) for g in a.gpus.split(",")]
 seeds = [int(s) for s in a.seeds.split(",")]

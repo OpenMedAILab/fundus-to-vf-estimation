@@ -1,5 +1,5 @@
 import json
-R="/remote-home/guijiangsheng/yyy/yang/fix_paper/qgy_xf/reproduce_full"
+from config import ROOT as R
 d=json.load(open(R+"/ext_domain_shift.json"))
 m=["\n\n---\n\n# 外部数据集分析 (External Validation - AH Glaucoma 2025)\n"]
 m.append("## 数据情况\n")

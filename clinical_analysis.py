@@ -2,7 +2,7 @@
 基于最优回归配置(按点位MAE)的跨seed集成 test 预测。"""
 import json, glob, numpy as np
 from sklearn.metrics import mean_absolute_error
-ROOT="/remote-home/guijiangsheng/yyy/yang/fix_paper/qgy_xf/reproduce_full"
+from config import ROOT
 CK=ROOT+"/ckpt"
 
 # 选最优回归配置

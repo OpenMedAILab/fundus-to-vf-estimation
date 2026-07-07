@@ -1,8 +1,8 @@
 """Wave3: 收敛曲线 (R4-6) — train_loss + val_metric vs epoch"""
 import json, glob, numpy as np
 import matplotlib; matplotlib.use("Agg")
-import matplotlib.font_manager as _fm; _fm.fontManager.addfont("/remote-home/guijiangsheng/yyy/yang/RetinaAgent_Care/simhei.ttf"); matplotlib.rcParams["font.sans-serif"]=["SimHei"]; matplotlib.rcParams["axes.unicode_minus"]=False; import matplotlib.pyplot as plt
-ROOT="/remote-home/guijiangsheng/yyy/yang/fix_paper/qgy_xf/reproduce_full"
+from config import setup_cjk_font; setup_cjk_font(); import matplotlib.pyplot as plt
+from config import ROOT
 cfgs=[("reg_hybrid_cfp_conv_s0","回归 Hybrid-CFP (val MAE↓)"),
       ("reg_full_hybrid_cfp_conv_s0","回归 FullHybrid-CFP (val MAE↓)"),
       ("cls_resnet_cfp_focal_samp_s0","分类 ResNet (val PR-AUC↑)"),

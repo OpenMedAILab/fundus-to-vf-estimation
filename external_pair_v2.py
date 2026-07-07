@@ -3,8 +3,7 @@ import os, glob, re, json, numpy as np
 from PIL import Image
 from datetime import datetime
 from scipy.stats import spearmanr, pearsonr
-ROOT="/remote-home/guijiangsheng/yyy/yang/fix_paper/qgy_xf/reproduce_full"
-VF="/remote-home/guijiangsheng/yyy/yang/fix_paper/external/VF"
+from config import ROOT, EXT_VF as VF
 
 def parse(s):
     name=re.match(r'^\D+',s); name=name.group(0) if name else s

@@ -1,6 +1,6 @@
 """Wave2: 分类逐步消融 + 回归收敛配置, 跨GPU并行"""
 import subprocess, time, os
-ROOT="/remote-home/guijiangsheng/yyy/yang/fix_paper/qgy_xf/reproduce_full"
+from config import ROOT
 GPUS=[1,2,3,5,7]; os.makedirs(f"{ROOT}/logs",exist_ok=True)
 C=[]
 # 分类逐步消融: 纯CE无采样 -> CE+采样 -> Focal+采样

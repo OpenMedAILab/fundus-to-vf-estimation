@@ -1,11 +1,11 @@
 """外部验证 Step A: 训好的GRAPE模型在外部CFP上推理 -> 预测59点VF + 预测MS"""
 import os, glob, json, sys, numpy as np, torch
-sys.path.insert(0,"/remote-home/guijiangsheng/yyy/yang/fix_paper/qgy_xf/reproduce_full")
+from config import ROOT, EXT_CFP as EXT
+sys.path.insert(0, ROOT)
 from repro import Hybrid, ResNetOnly, N_VF
 from PIL import Image
 from torchvision import transforms
-ROOT="/remote-home/guijiangsheng/yyy/yang/fix_paper/qgy_xf/reproduce_full"
-EXT="/remote-home/guijiangsheng/yyy/yang/fix_paper/external/CFP"
+# ROOT, EXT come from config (imported above)
 dev="cuda" if torch.cuda.is_available() else "cpu"
 tf=transforms.Compose([transforms.Resize((224,224)),transforms.ToTensor(),
                        transforms.Normalize([0.485,0.456,0.406],[0.229,0.224,0.225])])

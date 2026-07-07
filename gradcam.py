@@ -1,11 +1,11 @@
 """Wave3: Grad-CAM 热图 (结构-功能, R: Figure6) — ResNet-ROI回归模型对预测MS的关注区域"""
 import json, os, numpy as np, torch, torch.nn.functional as F
 import matplotlib; matplotlib.use("Agg")
-import matplotlib.font_manager as _fm; _fm.fontManager.addfont("/remote-home/guijiangsheng/yyy/yang/RetinaAgent_Care/simhei.ttf"); matplotlib.rcParams["font.sans-serif"]=["SimHei"]; matplotlib.rcParams["axes.unicode_minus"]=False; import matplotlib.pyplot as plt
+from config import setup_cjk_font; setup_cjk_font(); import matplotlib.pyplot as plt
 from PIL import Image; from torchvision import transforms
-import sys; sys.path.insert(0,"/remote-home/guijiangsheng/yyy/yang/fix_paper/qgy_xf/reproduce_full")
+import sys, config; sys.path.insert(0, config.ROOT)
 from repro import ResNetOnly, N_VF, GRAPE, BASE
-ROOT="/remote-home/guijiangsheng/yyy/yang/fix_paper/qgy_xf/reproduce_full"
+from config import ROOT
 dev="cuda" if torch.cuda.is_available() else "cpu"
 ck=f"{ROOT}/ckpt/reg_resnet_roi_s0/best.pth"
 m=ResNetOnly(N_VF).to(dev); m.load_state_dict(torch.load(ck,map_location=dev)); m.eval()

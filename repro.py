@@ -20,10 +20,7 @@ from sklearn.metrics import (mean_absolute_error, mean_squared_error, r2_score,
 import timm
 from PIL import Image
 
-BASE = "/remote-home/guijiangsheng/yyy/yang/fix_paper/20251113/GRAPE Dataset/GRAPE Dataset"
-DATA = "/remote-home/guijiangsheng/yyy/yang/fix_paper/qgy_xf/reproduce_full/data"
-OUTROOT = "/remote-home/guijiangsheng/yyy/yang/fix_paper/qgy_xf/reproduce_full/ckpt"
-AUGDIR = "/remote-home/guijiangsheng/yyy/yang/fix_paper/qgy_xf/reproduce_full/synthetic"
+from config import GRAPE_ROOT as BASE, DATA, CKPT as OUTROOT, SYNTHETIC as AUGDIR
 N_VF = 61
 
 # ---------------- Dataset ----------------

@@ -4,10 +4,10 @@ from datetime import datetime
 from scipy.interpolate import griddata
 from PIL import Image
 from torchvision import transforms
-sys.path.insert(0,"/remote-home/guijiangsheng/yyy/yang/fix_paper/qgy_xf/reproduce_full")
+from config import ROOT, EXTERNAL_ROOT as EXT
+sys.path.insert(0, ROOT)
 from repro import Hybrid, N_VF
-ROOT="/remote-home/guijiangsheng/yyy/yang/fix_paper/qgy_xf/reproduce_full"
-EXT="/remote-home/guijiangsheng/yyy/yang/fix_paper/external"; dev="cuda" if torch.cuda.is_available() else "cpu"
+dev="cuda" if torch.cuda.is_available() else "cpu"
 lay=np.load(ROOT+"/vf_layout.npy"); order=np.lexsort((lay[:,0],-lay[:,1])); LP=lay[order]
 gx,gy=np.mgrid[-1:1:200j,-1:1:200j]; disc=(gx**2+gy**2)<=1.0
 def render(v):

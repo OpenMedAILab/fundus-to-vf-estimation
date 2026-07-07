@@ -3,7 +3,7 @@ import json, glob, os, sys
 import numpy as np
 from sklearn.metrics import roc_auc_score, average_precision_score, mean_absolute_error, r2_score
 
-ROOT = "/remote-home/guijiangsheng/yyy/yang/fix_paper/qgy_xf/reproduce_full"
+from config import ROOT
 CK = ROOT + "/ckpt"
 ARCH_ORDER = ["resnet", "transformer", "hybrid", "full_hybrid"]
 

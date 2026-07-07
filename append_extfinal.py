@@ -1,5 +1,5 @@
 import json
-R="/remote-home/guijiangsheng/yyy/yang/fix_paper/qgy_xf/reproduce_full"
+from config import ROOT as R
 d=json.load(open(R+"/external_validation_final.json"))
 m=["\n\n---\n\n# 外部定量验证(灰度图代理法,已实现)\n"]
 m.append("## 方案\n外部皖南集只有 CFP + VF 灰度图(无数值)。采用:**CFP→模型→预测MS** vs **VF灰度图→反推MS**,按'姓名+最近就诊日期'(≤90天,日期差中位1天)配对,**全程 inference-only、无合成图、无微调**。\n")

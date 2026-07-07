@@ -4,8 +4,8 @@ from PIL import Image
 from datetime import datetime
 from scipy.stats import spearmanr, pearsonr
 import matplotlib; matplotlib.use("Agg"); import matplotlib.pyplot as plt
-ROOT="/remote-home/guijiangsheng/yyy/yang/fix_paper/qgy_xf/reproduce_full"
-VF="/remote-home/guijiangsheng/yyy/yang/fix_paper/external/VF"; TOL=90
+from config import ROOT, EXT_VF as VF
+TOL=90
 def parse(s):
     n=re.match(r'^\D+',s); n=n.group(0) if n else s
     d=re.search(r'(\d{8})',s)

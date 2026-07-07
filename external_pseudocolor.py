@@ -23,8 +23,7 @@ from PIL import Image
 from torchvision import transforms
 import matplotlib; matplotlib.use("Agg"); import matplotlib.pyplot as plt
 
-ROOT="/remote-home/guijiangsheng/yyy/yang/fix_paper/qgy_xf/reproduce_full"
-EXT="/remote-home/guijiangsheng/yyy/yang/fix_paper/external"
+from config import ROOT, EXTERNAL_ROOT as EXT
 sys.path.insert(0, ROOT)
 from repro import Hybrid, N_VF
 dev="cuda" if torch.cuda.is_available() else "cpu"

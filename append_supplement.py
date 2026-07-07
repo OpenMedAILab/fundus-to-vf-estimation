@@ -1,5 +1,5 @@
 import json, glob, numpy as np
-R="/remote-home/guijiangsheng/yyy/yang/fix_paper/qgy_xf/reproduce_full"
+from config import ROOT as R
 m=["\n\n---\n\n# 补充实验 (Wave 2/3 — 覆盖剩余审稿要求)\n"]
 m.append("## 8. 逐步增量消融 (R4-5, cls-cfp, ROC-AUC 3seed)\n")
 m.append("| 架构 | 纯CE无采样 | +加权采样 | +Focal Loss |")

@@ -2,8 +2,7 @@
 import os, glob, re, json, numpy as np
 from PIL import Image
 from scipy.stats import spearmanr, pearsonr
-ROOT="/remote-home/guijiangsheng/yyy/yang/fix_paper/qgy_xf/reproduce_full"
-VF="/remote-home/guijiangsheng/yyy/yang/fix_paper/external/VF"
+from config import ROOT, EXT_VF as VF
 
 def key_of(name):  # 患者名+日期 (去掉尾部 -编号 和扩展名)
     b=re.sub(r'\.(jpg|jpeg|png)$','',name,flags=re.I)

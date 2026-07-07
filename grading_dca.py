@@ -1,7 +1,7 @@
 """R3-3扩展: 预测VF vs 真实VF 严重度分级一致性(κ/混淆矩阵/敏感度特异度) + 决策曲线(DCA)"""
 import json, glob, numpy as np
 from sklearn.metrics import cohen_kappa_score, confusion_matrix
-ROOT="/remote-home/guijiangsheng/yyy/yang/fix_paper/qgy_xf/reproduce_full"
+from config import ROOT
 agg=json.load(open(ROOT+"/aggregate_summary.json"))
 best=min(agg["reg"].items(), key=lambda kv: kv[1]["point_mae_mean"])[0]
 rs=[json.load(open(f)) for f in glob.glob(f"{ROOT}/ckpt/reg_{best}_s*/result.json")]

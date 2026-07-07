@@ -4,8 +4,7 @@
 """
 import json, os, glob, random, numpy as np, shutil
 random.seed(42); np.random.seed(42)
-ROOT="/remote-home/guijiangsheng/yyy/yang/fix_paper/qgy_xf/reproduce_full"
-GEN="/remote-home/guijiangsheng/yyy/yang/fix_paper/qgy_xf/cloud_upload_package/experiments/generated"
+from config import ROOT, GEN_DIR as GEN
 SYN=ROOT+"/synthetic"; os.makedirs(SYN, exist_ok=True)
 DATA=ROOT+"/data"
 N_SYN=150

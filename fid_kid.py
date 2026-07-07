@@ -5,9 +5,8 @@ from torchvision import transforms
 from torchmetrics.image.fid import FrechetInceptionDistance
 from torchmetrics.image.kid import KernelInceptionDistance
 
-REAL="/remote-home/guijiangsheng/yyy/yang/fix_paper/20251113/GRAPE Dataset/GRAPE Dataset/CFPs"
-GEN="/remote-home/guijiangsheng/yyy/yang/fix_paper/qgy_xf/cloud_upload_package/experiments/generated"
-OUT="/remote-home/guijiangsheng/yyy/yang/fix_paper/qgy_xf/reproduce_full/fid_kid.json"
+from config import GRAPE_CFP as REAL, GEN_DIR as GEN, ROOT
+OUT=os.path.join(ROOT,"fid_kid.json")
 dev="cuda" if torch.cuda.is_available() else "cpu"
 tf=transforms.Compose([transforms.Resize((256,256)), transforms.PILToTensor()])  # uint8
 

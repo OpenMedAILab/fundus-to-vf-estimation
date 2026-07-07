@@ -23,8 +23,7 @@ from skimage.metrics import structural_similarity as ssim
 from torchvision import transforms
 import matplotlib; matplotlib.use("Agg"); import matplotlib.pyplot as plt
 
-ROOT = "/remote-home/guijiangsheng/yyy/yang/fix_paper/qgy_xf/reproduce_full"
-EXT  = "/remote-home/guijiangsheng/yyy/yang/fix_paper/external"
+from config import ROOT, EXTERNAL_ROOT as EXT
 OUT  = ROOT + "/wannan_extval"; os.makedirs(OUT, exist_ok=True)
 sys.path.insert(0, ROOT)
 from repro import Hybrid, N_VF

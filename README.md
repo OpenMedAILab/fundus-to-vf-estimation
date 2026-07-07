@@ -50,6 +50,11 @@ logs/                  # 训练日志
 ```bash
 pip install -r requirements.txt
 
+# 配置数据路径（所有脚本经 config.py 统一读取；不设则默认到仓库目录下的同名文件夹）
+export GRAPE_ROOT="/path/to/GRAPE Dataset/GRAPE Dataset"   # 含 CFPs/ ROI images/ Annotated Images/ 及 xlsx
+export EXTERNAL_ROOT="/path/to/external"                    # 含 CFP/ 与 VF/（外部验证，可选）
+# 可选：export GEN_DIR=... (StyleGAN 生成图)  export SIMHEI_TTF=... (中文字体)
+
 # 单个 run
 python repro.py --task reg --arch full_hybrid --input cfp --seed 0 [--aug]
 
@@ -59,6 +64,8 @@ python orchestrate.py all --seeds 0,1,2 --gpus 0,1,2,3
 # 汇总结果
 python aggregate.py && python report.py
 ```
+
+> 所有路径集中在 **`config.py`**：仓库自身位置自动作为 `ROOT`，数据集等外部路径通过环境变量覆盖（各有默认值）。无需再手改任何脚本。
 
 ## 未包含内容（需自行准备）
 
@@ -70,8 +77,8 @@ python aggregate.py && python report.py
 
 ## ⚠️ 重要提示
 
-1. **硬编码路径**：`repro.py`、`orchestrate.py` 等 24 个脚本中的数据/输出路径为绝对路径
-   （如 `/remote-home/.../reproduce_full`、`GRAPE Dataset` 位置），**运行前请改成你本地的路径**。
-2. **患者隐私**：`external_ms_pairing.json`、`external_pred_ms.json`、
-   `wannan_extval/wannan_extval_pairs.json`、`external_infer.py` 含真实受试者姓名+日期，
-   **公开前建议脱敏或从仓库移除**。
+1. **路径配置**：所有脚本的数据/输出路径已统一到 `config.py`，由环境变量覆盖（见「快速开始」），
+   不再有指向特定服务器的硬编码绝对路径。
+2. **患者隐私**：外部验证结果文件（`external_ms_pairing.json`、`external_pred_ms.json`、
+   `wannan_extval/wannan_extval_pairs.json`）中的真实受试者姓名已**脱敏为匿名 ID**（`P001`…），
+   姓名↔ID 映射表 `deid_mapping.json` 仅保留在本地、未纳入版本库。

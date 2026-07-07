@@ -1,7 +1,7 @@
 """生成最终复现报告 (Markdown), 汇总 Phase 1-5 + 对照原文 + 审稿意见映射"""
 import json, glob, os, numpy as np
 from sklearn.metrics import roc_auc_score, mean_absolute_error
-ROOT="/remote-home/guijiangsheng/yyy/yang/fix_paper/qgy_xf/reproduce_full"
+from config import ROOT
 CK=ROOT+"/ckpt"; AO=["resnet","transformer","hybrid","full_hybrid"]
 def L(f): 
     try: return json.load(open(f))
